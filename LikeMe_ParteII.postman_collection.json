@@ -1,0 +1,46 @@
+{
+  "info": {
+    "name": "Like Me – Parte II",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /posts",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/posts"
+      }
+    },
+    {
+      "name": "POST /posts",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Post de prueba\",\n  \"img\": \"https://picsum.photos/600/400\",\n  \"descripcion\": \"Post creado desde Postman\"\n}"
+        },
+        "url": "{{baseUrl}}/posts"
+      }
+    },
+    {
+      "name": "PUT /posts/like/:id",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/posts/like/{{id}}"
+      }
+    },
+    {
+      "name": "DELETE /posts/:id",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/posts/{{id}}"
+      }
+    }
+  ]
+}
